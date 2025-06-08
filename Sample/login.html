@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <main class="container">
+        <section id="login">
+            <h2 class="page-title">
+                Login into your account
+            </h2>
+            <p class="page-subtitle">
+                Please enter your credentials to access your account.
+            </p>
+
+            <div class="form-container">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email">
+                        <div class="error" id="loginEmailError">Please enter your email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password">
+                        <div class="error" id="loginPasswordError">Please enter your password</div>
+                    </div>
+                    <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="radio-option">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#" style="color: var(--primary); text-decoration: none;">Forgot Password?</a>
+                    </div>
+
+                     <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    
+                    <p style="text-align: center; margin-top: 20px;">
+                        Don't have an account? <a href="register.html" style="color: var(--primary); text-decoration: none;">Register here</a>
+                    </p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

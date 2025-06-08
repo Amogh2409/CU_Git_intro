@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTrack - Patient Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="AllinOne.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>Med<span>Track</span></h1>
+            </div>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="register">Register</a></li>
+                    <li><a href="#" class="nav-link" data-page="login">Login</a></li>
+                    <li><a href="#" class="nav-link" data-page="appointment">Appointments</a></li>
+                    <li><a href="#" class="nav-link" data-page="prescription">Prescriptions</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="registerBtn">Register</button>
+            </div>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <h2 class="page-title">Patient Medicine & Appointment Tracking System</h2>
+            <p class="page-subtitle">Manage your healthcare journey with our comprehensive tracking system for appointments, prescriptions, and medications</p>
+            
+            <div class="hero">
+                <h2>Your Health, Simplified</h2>
+                <p>MedTrack helps you manage appointments, track medications, and access prescriptions - all in one place. Designed for modern healthcare needs.</p>
+                <button class="btn btn-primary">Get Started Today</button>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Appointment Management</h3>
+                    <p>Book, reschedule, or cancel appointments with healthcare providers. Receive reminders for upcoming visits.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <h3>Medicine Tracking</h3>
+                    <p>Keep track of your medications with dosage instructions, refill reminders, and prescription history.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h3>Digital Prescriptions</h3>
+                    <p>Access your prescriptions anytime, anywhere. Share them with pharmacies or other healthcare providers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Page -->
+        <section id="register" class="page">
+            <h2 class="page-title">Create Your Account</h2>
+            <p class="page-subtitle">Join our healthcare platform to manage appointments, prescriptions, and medications</p>
+            
+            <div class="form-container">
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name">
+                        <div class="error" id="nameError">Please enter your full name</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        <div class="error" id="emailError">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="Create a password">
+                        <div class="error" id="passwordError">Password must be at least 8 characters</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password">
+                        <div class="error" id="confirmPasswordError">Passwords do not match</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" class="form-control" placeholder="Enter your age">
+                        <div class="error" id="ageError">Please enter a valid age</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                        <div class="error" id="genderError">Please select your gender</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                        <div class="error" id="phoneError">Please enter a valid phone number</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page">
+            <h2 class="page-title">Login to Your Account</h2>
+            <p class="page-subtitle">Access your personalized healthcare dashboard</p>
+            
+            <div class="form-container">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email">
+                        <div class="error" id="loginEmailError">Please enter your email address</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password">
+                        <div class="error" id="loginPasswordError">Please enter your password</div>
+                    </div>
+                    
+                    <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="radio-option">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#" style="color: var(--primary); text-decoration: none;">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    
+                    <p style="text-align: center; margin-top: 20px;">
+                        Don't have an account? <a href="#" id="registerLink" style="color: var(--primary); text-decoration: none;">Register here</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Appointment Page -->
+        <section id="appointment" class="page">
+            <h2 class="page-title">Manage Appointments</h2>
+            <p class="page-subtitle">Book new appointments or view your upcoming visits</p>
+            
+            <div class="form-container">
+                <h3 style="margin-bottom: 20px; color: var(--primary);">Book New Appointment</h3>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="doctor">Select Doctor</label>
+                        <select id="doctor" class="form-control">
+                            <option value="">Choose a doctor</option>
+                            <option value="dr_smith">Dr. Sarah Smith (Cardiology)</option>
+                            <option value="dr_johnson">Dr. Michael Johnson (Pediatrics)</option>
+                            <option value="dr_williams">Dr. Emily Williams (Dermatology)</option>
+                            <option value="dr_brown">Dr. James Brown (Orthopedics)</option>
+                        </select>
+                        <div class="error" id="doctorError">Please select a doctor</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointmentDate">Appointment Date</label>
+                        <input type="date" id="appointmentDate" class="form-control">
+                        <div class="error" id="dateError">Please select a valid date</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointmentTime">Preferred Time</label>
+                        <select id="appointmentTime" class="form-control">
+                            <option value="">Select time slot</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                        </select>
+                        <div class="error" id="timeError">Please select a time slot</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reason">Reason for Visit</label>
+                        <textarea id="reason" class="form-control" rows="3" placeholder="Briefly describe the reason for your visit"></textarea>
+                        <div class="error" id="reasonError">Please provide a reason for your visit</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book Appointment</button>
+                </form>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; margin-bottom: 20px; color: var(--primary);">Upcoming Appointments</h3>
+                <table class="appointments-table">
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Specialty</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr. Sarah Smith</td>
+                            <td>Cardiology</td>
+                            <td>June 15, 2025</td>
+                            <td>10:00 AM</td>
+                            <td><span class="status confirmed">Confirmed</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dr. James Brown</td>
+                            <td>Orthopedics</td>
+                            <td>June 22, 2025</td>
+                            <td>2:30 PM</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Emily Williams</td>
+                            <td>Dermatology</td>
+                            <td>July 5, 2025</td>
+                            <td>11:15 AM</td>
+                            <td><span class="status confirmed">Confirmed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Prescription Page -->
+        <section id="prescription" class="page">
+            <h2 class="page-title">Your Prescriptions</h2>
+            <p class="page-subtitle">View and manage your current and past prescriptions</p>
+            
+            <div class="prescription-card">
+                <div class="prescription-header">
+                    <div class="doctor-info">
+                        <h4>Prescribing Physician</h4>
+                        <p>Dr. Sarah Smith</p>
+                        <p>Cardiology Specialist</p>
+                        <p>MedCenter Hospital</p>
+                    </div>
+                    
+                    <div class="patient-info">
+                        <h4>Patient Information</h4>
+                        <p>John Doe</p>
+                        <p>Age: 45 | Male</p>
+                        <p>Patient ID: PT-2025-001</p>
+                    </div>
+                </div>
+                
+                <h3 class="prescription-title">MEDICATION PRESCRIPTION</h3>
+                
+                <table class="medication-list">
+                    <thead>
+                        <tr>
+                            <th>Medication</th>
+                            <th>Dosage</th>
+                            <th>Frequency</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Atorvastatin</td>
+                            <td>20mg</td>
+                            <td>Once daily</td>
+                            <td>30 days</td>
+                        </tr>
+                        <tr>
+                            <td>Lisinopril</td>
+                            <td>10mg</td>
+                            <td>Once daily</td>
+                            <td>30 days</td>
+                        </tr>
+                        <tr>
+                            <td>Aspirin</td>
+                            <td>81mg</td>
+                            <td>Once daily</td>
+                            <td>90 days</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="instructions">
+                    <h4>Instructions</h4>
+                    <p>Take Atorvastatin at bedtime. Lisinopril and Aspirin should be taken in the morning. Avoid grapefruit while taking Atorvastatin. Monitor blood pressure regularly. Follow up in 30 days.</p>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                    <div>
+                        <p><strong>Date Issued:</strong> May 28, 2025</p>
+                        <p><strong>Valid Until:</strong> August 28, 2025</p>
+                    </div>
+                    <div>
+                        <p><strong>Signature:</strong></p>
+                        <img src="#" alt="Doctor Signature" style="height: 50px; border-bottom: 1px solid var(--dark); width: 150px;">
+                        <p>Dr. Sarah Smith</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MedTrack</h3>
+                    <p>Your comprehensive healthcare management solution. Simplifying patient care through technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Appointment Booking</a></li>
+                        <li><a href="#">Prescription Management</a></li>
+                        <li><a href="#">Medicine Reminders</a></li>
+                        <li><a href="#">Health Records</a></li>
+                        <li><a href="#">Telemedicine</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Healthcare St, Medical City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@medtrack.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 MedTrack Patient Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="AllinOne.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+project-root/
+├── index.html                  # Homepage
+├── register.html               # Registration page
+├── login.html                  # Login page
+├── appointments.html           # Appointment page
+├── prescription.html           # Prescription page
+├── css/
+│   ├── style.css               # Global styles
+│   ├── home.css                # Homepage styles
+│   ├── forms.css               # Form page styles
+│   └── responsive.css          # Responsive styles
+├── js/
+│   ├── main.js                 # Common functionality
+│   ├── navigation.js           # Navigation handling
+│   ├── validation.js           # Form validation
+│   ├── appointments.js         # Appointment functionality
+│   └── auth.js                 # Authentication handling
+└── assets/                     # Images/icons (optional)
