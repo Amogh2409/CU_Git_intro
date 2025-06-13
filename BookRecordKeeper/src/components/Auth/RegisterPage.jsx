@@ -8,13 +8,41 @@ const RegisterPage = ({ setCurrentPage }) => {
     const [message, setMessage] = useState('');
 
 
-    const handleRegister = (e) => {
-
-        e.preventDefault();
-
-
-        setTimeout(() => { }, 500)
-    }
+  const handleRegister = (e) => {
+    e.preventDefault();
+    
+    setTimeout(() => {
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      
+      // Check if email exists
+      if (users.some(u => u.email === email)) {
+        setMessage('Email already registered');
+        return;
+      }
+      
+      // Create new user
+      const newUser = { 
+        id: Date.now(), 
+        name, 
+        email, 
+        password, 
+        books: [] 
+      };
+      
+      // Update users array
+      users.push(newUser);
+      
+      // Save to localStorage
+      localStorage.setItem('users', JSON.stringify(users));
+      
+      setMessage('Registration successful! You can now login.');
+      
+      // Reset form
+      setName('');
+      setEmail('');
+      setPassword('');
+    }, 500);
+  };
 
     return (
         <div className='auth-container'>
