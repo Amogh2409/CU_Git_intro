@@ -1,0 +1,14 @@
+book-tracker/
+├── src/
+│   ├── components/
+│   │   ├── Auth/
+│   │   │   ├── LoginPage.js
+│   │   │   └── RegisterPage.js
+│   │   ├── Books/
+│   │   │   ├── BooksPage.js
+│   │   │   ├── AddBookPage.js
+│   │   │   └── BookCard.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
